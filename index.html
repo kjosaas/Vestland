@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Arkivsøk: Søk etter arkiver og dokumenter."
+    />
+    <title>Arkivsøk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Hjem</a></li>
+        <li><a href="#about">Om vestlandarkivet</a></li>
+        <li><a href="#services">Bestill innsyn</a></li>
+        <li><a href="#contact">Kontakt oss</a></li>
+      </ul>
+    </nav>
+
+    <!-- Search Container -->
+    <h1>Vestlandarkivet</h1>
+    <div id="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Søk etter arkiver..."
+        aria-label="Søk etter arkiver"
+        autofocus
+      />
+      <button id="search-button" type="button">Søk</button>
+      <button id="advanced-search-toggle" type="button">Avansert søk</button>
+    </div>
+
+    <!-- Results Container -->
+    <div id="results-container">
+      <!-- Resultater vil bli generert her av JavaScript -->
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div id="footer-logos">
+        <img src="logos/logo_1.png" alt="Logo 1" class="footer-logo" />
+        <img src="logos/logo_2.png" alt="Logo 2" class="footer-logo" />
+        <img src="logos/logo_3.png" alt="Logo 3" class="footer-logo" />
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
