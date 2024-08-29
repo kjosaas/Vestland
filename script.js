@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('csvjson.json')
         .then(response => response.json())
         .then(data => {
-            document.getElementById('search-button').addEventListener('click', () => {
+            const performSearch = () => {
                 const query = document.getElementById('search-input').value.toLowerCase();
                 const resultsContainer = document.getElementById('results-container');
                 
@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     archiveElement.classList.add('archive');
                     archiveElement.innerHTML = `
                         <h2>${archive.arkiv_tittel}</h2>
+                        <p><strong>Om kommunen:</strong> ${archive.Kommune_beskrivelse}</p>
+                        <p><strong>Om arkivskaperen:</strong> ${archive.beskrivelse_arkivskaper}</p>
                         <button class="toggle-series" data-archive-id="${archive.arkiv_id}">Vis katalog</button>
                         <div class="series-container" style="display:none;"></div>
                     `;
@@ -71,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                 });
+            };
+
+            document.getElementById('search-button').addEventListener('click', performSearch);
+
+            document.getElementById('search-input').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    performSearch();
+                }
             });
         })
         .catch(error => console.error('Error loading the JSON file:', error));
